@@ -1,14 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>FullStory Challenge App</span>
+    <span><i class="material-icons-outlined">book </i></span>
+    <span> FullStory Challenge App</span>
   </mat-toolbar-row>
 </mat-toolbar>
 <nav mat-tab-nav-bar backgroundColor="primary" class="stretched-nav">
-    <a mat-tab-link class="stretched-nav-item" active="true"> Instructions </a>
-    <a mat-tab-link class="stretched-nav-item"> Configure </a>
-    <a mat-tab-link class="stretched-nav-item"> Playground </a>
-    <a mat-tab-link class="stretched-nav-item"> Support </a>
-    <a mat-tab-link class="stretched-nav-item"> About </a>
+    <a routerLink="/instructions" mat-tab-link class="stretched-nav-item" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"> Instructions </a>
+    <a routerLink="/configure" mat-tab-link class="stretched-nav-item"  routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive"> Configure </a>
+    <a routerLink="/playground" mat-tab-link class="stretched-nav-item" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive"> Playground </a>
+    <a routerLink="/support" mat-tab-link class="stretched-nav-item" routerLinkActive #rla4="routerLinkActive" [active]="rla4.isActive"> Support </a>
+    <a routerLink="/about" mat-tab-link class="stretched-nav-item" routerLinkActive #rla5="routerLinkActive" [active]="rla5.isActive"> About </a>
 </nav>
-<router-outlet></router-outlet>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

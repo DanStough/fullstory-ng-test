@@ -1,5 +1,12 @@
-.stretched-nav {
-    
+.content {
+    width: 800px;
+    margin: auto;
+}
+
+i {
+    font-size: 24px;
+    margin-top: 8px;
+    margin-right: 12px;
 }
 
 .mat-tab-links {

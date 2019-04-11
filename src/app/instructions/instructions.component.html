@@ -1,4 +1,49 @@
 <h1 class="headline">Instructions</h1>
-<p>
-  instructions works!
+
+<p class="body-1">
+Welcome to a short demo of FullStory! This Angular site demostrates how you can leverage 
+the FullStory and Github REST APIs to create an interactive support ticketing system with references
+to live session recordings using only the front end of a web application. Following the instructions 
+below will lead you on a tour of this demos functionality.
 </p>
+
+<h2 class="subheading-2">Warnings, Notes & Assumptions</h2>
+<p class="body-1">
+Before we begin a few words of caution:
+</p>
+<ul>
+  <li>This site was not designed with responsiveness in mind; <strong>if you're on mobile, you're going to have a bad time.</strong></li>
+  <li>This is a front-end-only application that currently has no session storage; this means <strong>if you refresh the page, 
+    all your confguration will be wiped.</strong></li>
+  <li>If FullStory recording isn't working, check your Ad Blocker isn't blocking FullStory. You could spend more time trying to "debug" 
+    this out then you would like.</li>
+</ul>
+
+<h2 class="subheading-2">Configure</h2>
+<p class="body-1">
+In the "Configure" tab, setup the follow credentials (hopefully you have them handy):
+</p>
+<ol>
+  <li>FullStory Account Information - for recording.</li>
+  <li>FullStory API Key (Pro Subscription Only) - for viewing sessions over the rest API.</li>
+  <li>Github API Key - for creating issues against the project.</li>
+</ol>
+
+<h2 class="subheading-2">Record</h2>
+<p class="body-1">
+With the configuration items in place, you can start a FullStory session using the ???Record button in the menu???. 
+The "Playground" tab is provided as a place to experiment with Rage Clicks, Abandoned forms and excluded areas.
+</p>
+<p class="body-1">
+Click the button again (now a Stop Sign) to ????end the session????.
+</p>
+
+<h2 class="subheading-2">Submit a Support Ticket</h2>
+<p class="body-1">
+Once you have some session recordings, you can browse them under the "Support" tab. There may be some delay in the recording capture. 
+</p>
+<p class="body-1">
+When you identify a "problematic" session where you had an issue, click on the "Submit Ticket" button for that issue. Fill the details into the 
+dialog a Github issue with the session info will be created in the Github project.
+</p>
+

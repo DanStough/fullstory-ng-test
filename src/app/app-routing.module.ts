@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent } from './about/about.component';
-import { ConfigureComponent } from './configure/configure.component';
-import { InstructionsComponent } from './instructions/instructions.component';
-import { PlaygroundComponent } from './playground/playground.component';
-import { SupportComponent } from './support/support.component';
+import { AboutComponent } from './components/about/about.component';
+import { ConfigureComponent } from './components/configure/configure.component';
+import { InstructionsComponent } from './components/instructions/instructions.component';
+import { PlaygroundComponent } from './components/playground/playground.component';
+import { SupportComponent } from './components/support/support.component';
 
 
 const routes: Routes = [

@@ -1,4 +1,4 @@
-# FullstoryNgTest
+# Fullstory Challenge
 
 To try out the application, TBD. The application itself includes more details and instructions on how it works and how it was built.
 

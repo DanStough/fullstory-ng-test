@@ -1,8 +1,28 @@
-<h1 class="headline">Confgure</h1>
+<h1 class="headline">Configure</h1>
 
+<h2 class="subheading-2">FullStory Client Authentication</h2>
 <p class="body-1">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat massa non erat pretium commodo. Praesent quis risus eros. Fusce dapibus malesuada velit. Fusce vestibulum, massa ultrices porttitor vehicula, nunc eros auctor justo, in fringilla lectus sapien eu metus. Etiam feugiat lorem eu ligula egestas interdum. Vestibulum turpis nibh, faucibus eu nibh ut, ultrices maximus nulla. Mauris placerat viverra vehicula. Curabitur ut risus sit amet velit lobortis elementum. In hac habitasse platea dictumst. Praesent a eros tempor lorem sodales porta. Sed pulvinar consequat justo nec porttitor. Quisque porttitor molestie consectetur. Sed dapibus non lacus quis ultrices. Donec suscipit tempor elementum.
+Let's setup the FullStory Client. Consult the <a href="https://help.fullstory.com/develop-js/137379">FullStory JS API</a> for more information on these fields.
 </p>
-<p class="body-1">
-Vivamus molestie nisl in ligula bibendum mattis. Integer sit amet massa ac sapien dictum convallis vitae ac dui. Vestibulum pellentesque venenatis felis, id blandit dolor rutrum a. Suspendisse ornare ligula pharetra, pharetra tortor sodales, dictum justo. Vestibulum viverra, turpis sit amet consectetur fringilla, urna purus dapibus ligula, eu sagittis quam ipsum et lacus. Phasellus ligula dolor, sodales non nisl vel, porta vulputate arcu. Duis sit amet pretium leo. Cras odio felis, maximus vulputate nibh quis, rhoncus eleifend lacus. Praesent consequat volutpat dignissim. Nam varius commodo erat, non lobortis metus ultricies ut. Aenean malesuada ipsum non auctor pretium. Curabitur nulla arcu, posuere id suscipit sit amet, consectetur et ipsum. In nec diam ornare, cursus dolor id, sodales ligula. Etiam vitae mauris aliquet, fermentum ex ac, sollicitudin diam. Cras tristique dapibus dolor, id aliquet neque sollicitudin et.
-</p>
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>FullStory Client - User Authentication</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="fsIdentityForm" (ngSubmit)="onSubmit()" class="form-full-width">
+            <mat-form-field class="full-width">
+                <input type="number" matInput placeholder="User ID" formControlName="uid" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Display Name" formControlName="displayName">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input type="email" matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+        
+            <button class="form-button" mat-raised-button color="primary" type="submit" [disabled]="!fsIdentityForm.valid">Submit</button>
+            <button class="form-button clear" mat-raised-button color="accent" (click)="onClear()" [disabled]="fsIdentityForm.pristine">Clear</button>
+        </form>
+    </mat-card-content>
+</mat-card>

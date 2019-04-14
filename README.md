@@ -1,33 +1,33 @@
 # FullstoryNgTest
 
-*NOTES*
-* Must disable AdBlocker to use the FullStory API!!!
+To try out the application, TBD. The application itself includes more details and instructions on how it works and how it was built.
 
-*ASSUMPTIONS*
-* App does not need to be responsive; doesn't work on mobile.
+## Run as Docker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+To run locally without building:
+* Have Docker CE installed for your platform
+* Create a `.env` file somewhere on disc. The following two variables are required
+    * `FULLSTORY_API_KEY`: API Key to FullStory REST API
+    * `GITHUB_API_KEY`: API Key to GitHub REST API
+    * `SERVER_PORT`: Port where the backend server will run; 3000 is fine for this
+* In a terminal run `docker run --rm --env-file=<.ENV FILE> -p 8080:<SERVER_PORT> dstough/fullstory-challenge`
+* Visit `http://localhost:8080`
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Local Development
 
-## Code scaffolding
+To deploy this application locally:
+* Install the latest [Node.js runtime](https://nodejs.org/en/download/).
+* Clone the repository.
+* Run `npm install` in the project directory.
+* Create a `.env` file in the root of the project. the following two variables are required
+    * `FULLSTORY_API_KEY`: API Key to FullStory REST API
+    * `GITHUB_API_KEY`: API Key to GitHub REST API
+    * `SERVER_PORT`: Port where the backend server will run; should equal 3000 for local development
+* In one terminal, run `npm run start:server` to start the server
+* In another terminal, run `npm start` to setup the front-end application server.
+* Visit `http://localhost:4200` in a browser.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Docker Build
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `docker build -t dstough/fullstory-challenge .`

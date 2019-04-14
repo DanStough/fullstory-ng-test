@@ -1,5 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# environment variables 
+*.env
+
+# dist copied to public
+*/server/public/*
+
+###### FROM ANGULAR CLI #############
+
 # compiled output
 /dist
 /tmp

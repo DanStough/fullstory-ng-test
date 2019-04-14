@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+import { FullstoryClientService, Identity } from '../../services/fullstory-client.service'
+
 @Component({
   selector: 'app-configure',
   templateUrl: './configure.component.html',
@@ -13,17 +15,24 @@ export class ConfigureComponent implements OnInit {
     email: ['']
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private fsClientSvc: FullstoryClientService
+  ) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.fsIdentityForm.value);
+    this.fsClientSvc.identify(this.fsIdentityForm.value);
   }
 
   onClear() {
+    this.fsIdentityForm.reset();
+  }
+
+  onAnonymize() {
+    this.fsClientSvc.clearIdentity();
     this.fsIdentityForm.reset();
   }
 

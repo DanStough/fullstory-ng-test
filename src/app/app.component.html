@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span><i class="material-icons-outlined">book </i></span>
+    <mat-icon class="book-icon" aria-hidden="false" aria-label="book icon">book</mat-icon>
     <span> FullStory Challenge App - D. K. Stough</span>
+    <span class="spacer"></span>
+    <button mat-fab color="accent" (click)="toggleRecord()">
+        <mat-icon *ngIf="!fsClientSvc.isRecording" class="button-icon" aria-hidden="false" aria-label="record icon" matTooltip="Start FullStory Capture">screen_share</mat-icon>
+        <mat-icon *ngIf="fsClientSvc.isRecording" class="button-icon" aria-hidden="false" aria-label="pause icon" matTooltip="Stop FullStory Capture">stop_screen_share</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <nav mat-tab-nav-bar backgroundColor="primary" class="stretched-nav">

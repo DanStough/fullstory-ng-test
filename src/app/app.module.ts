@@ -4,9 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule}  from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -19,7 +21,9 @@ import { InstructionsComponent } from './components/instructions/instructions.co
 import { PlaygroundComponent } from './components/playground/playground.component';
 import { SupportComponent } from './components/support/support.component';
 
+import { FullstoryClientService } from './services/fullstory-client.service';
 import { FullstoryServerService } from './services/fullstory-server.service'
+
 
 @NgModule({
   declarations: [
@@ -38,12 +42,15 @@ import { FullstoryServerService } from './services/fullstory-server.service'
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatTabsModule,
     MatToolbarModule,
+    MatTooltipModule,
     ReactiveFormsModule
   ],
   providers: [
+    FullstoryClientService,
     FullstoryServerService
   ],
   bootstrap: [AppComponent]

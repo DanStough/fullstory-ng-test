@@ -12,17 +12,18 @@ Let's setup the FullStory Client. Consult the <a href="https://help.fullstory.co
     <mat-card-content>
         <form [formGroup]="fsIdentityForm" (ngSubmit)="onSubmit()" class="form-full-width">
             <mat-form-field class="full-width">
-                <input type="number" matInput placeholder="User ID" formControlName="uid" required>
+                <input type="number" matInput placeholder="User ID" formControlName="uid" [value]="fsClientSvc.currentId.uid" required>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input matInput placeholder="Display Name" formControlName="displayName">
+                <input matInput placeholder="Display Name" formControlName="displayName" [value]="fsClientSvc.currentId.displayName">
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="email" matInput placeholder="Email" formControlName="email">
+                <input type="email" matInput placeholder="Email" formControlName="email" [value]="fsClientSvc.currentId.email">
             </mat-form-field>
         
             <button class="form-button" mat-raised-button color="primary" type="submit" [disabled]="!fsIdentityForm.valid">Submit</button>
-            <button class="form-button clear" mat-raised-button color="accent" (click)="onClear()" [disabled]="fsIdentityForm.pristine">Clear</button>
+            <button class="form-button side-button" mat-raised-button (click)="onClear()" [disabled]="fsIdentityForm.pristine">Clear Form</button>
+            <button class="form-button side-button" mat-raised-button color="accent" (click)="onAnonymize()" [disabled]="fsClientSvc.currentId.uid==null">Make Anonymous</button>
         </form>
     </mat-card-content>
 </mat-card>

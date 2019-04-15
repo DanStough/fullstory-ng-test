@@ -1,7 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
 
 import { FullstoryServerService, FsSession } from '../../services/fullstory-server.service'
-import { FullstoryClientService } from 'src/app/services/fullstory-client.service';
+import { FullstoryClientService } from '../../services/fullstory-client.service';
+import { GithubServerService } from '../../services/github-server.service';
+
 
 @Component({
   selector: 'session-table',
@@ -16,7 +18,8 @@ export class SessionTableComponent implements AfterViewInit {
 
   constructor(
     private fsClientSvc: FullstoryClientService,
-    private fsServerSvc: FullstoryServerService) {
+    private fsServerSvc: FullstoryServerService,
+    private ghServerSvc: GithubServerService) {
     fsServerSvc.$mySessions.subscribe( (data) => {
       this.data = data;
     });

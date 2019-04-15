@@ -41,7 +41,7 @@
         <ng-container matColumnDef="issue">
           <th mat-header-cell *matHeaderCellDef>Submit Issue</th>
           <td mat-cell *matCellDef="let row">
-            <button mat-raised-button color="accent" (click)="createIssue(row)">Submit</button>
+            <button mat-raised-button color="accent" (click)="ghServerSvc.createIssue(row)">Submit</button>
           </td>
         </ng-container>
 

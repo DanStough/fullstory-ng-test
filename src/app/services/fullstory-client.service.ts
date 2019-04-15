@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 declare var FS: any;
 
-export interface Identity {
+export interface FsIdentity {
   uid: number | null,
   displayName?: string,
   email?: String
@@ -13,7 +13,7 @@ export interface Identity {
 })
 export class FullstoryClientService {
   public isRecording = false;
-  public currentId : Identity;
+  public currentId : FsIdentity;
 
   constructor() { 
     FS.identify(false);
@@ -24,7 +24,7 @@ export class FullstoryClientService {
     }
   }
 
-  identify(identity: Identity){
+  identify(identity: FsIdentity){
     this.currentId = identity;
 
     FS.identify(identity.uid, {

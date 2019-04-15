@@ -21,7 +21,7 @@ Let's setup the FullStory Client. Consult the <a href="https://help.fullstory.co
                 <input type="email" matInput placeholder="Email" formControlName="email" [value]="fsClientSvc.currentId.email">
             </mat-form-field>
         
-            <button class="form-button" mat-raised-button color="primary" type="submit" [disabled]="!fsIdentityForm.valid">Submit</button>
+            <button class="form-button" mat-raised-button color="primary" type="submit" [disabled]="!fsIdentityForm.valid || fsIdentityForm.pristine">Submit</button>
             <button class="form-button side-button" mat-raised-button (click)="onClear()" [disabled]="fsIdentityForm.pristine">Clear Form</button>
             <button class="form-button side-button" mat-raised-button color="accent" (click)="onAnonymize()" [disabled]="fsClientSvc.currentId.uid==null">Make Anonymous</button>
         </form>

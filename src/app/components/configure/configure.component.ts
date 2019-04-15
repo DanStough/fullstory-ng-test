@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import { FullstoryClientService, Identity } from '../../services/fullstory-client.service'
+import { FullstoryClientService, FsIdentity } from '../../services/fullstory-client.service'
 
 @Component({
   selector: 'app-configure',
@@ -25,10 +25,14 @@ export class ConfigureComponent implements OnInit {
 
   onSubmit() {
     this.fsClientSvc.identify(this.fsIdentityForm.value);
+    this.fsIdentityForm.markAsPristine();
   }
 
   onClear() {
     this.fsIdentityForm.reset();
+    if(this.fsClientSvc.currentId.uid){
+      this.fsIdentityForm.setValue(this.fsClientSvc.currentId);
+    }
   }
 
   onAnonymize() {

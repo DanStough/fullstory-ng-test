@@ -8,9 +8,9 @@ const port = process.env.SERVER_PORT;
 const fsKey = process.env.FULLSTORY_API_KEY;
 const ghToken = process.env.GITHUB_OAUTH_TOKEN;
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 
+// Proxy API requests and add credentials
 app.use('/fullstory', proxy('https://www.fullstory.com', {
     proxyReqOptDecorator: (proxyReqOpts, srcReq)=> {
         proxyReqOpts.headers['Authorization'] = 'Basic ' + fsKey;
@@ -27,5 +27,11 @@ app.use('/github', proxy('https://api.github.com', {
         return proxyReqOpts
     }
 }));
+
+// Serve Static Assets
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Catch All Back tp Index
+app.use('*',express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => console.log(`FullStory Challenge app server listening on port ${port}!`))

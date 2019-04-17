@@ -29,7 +29,7 @@ COPY --from=builder /project/package.json .
 RUN apk add --no-cache tini
 RUN npm install --production
 
-USER node 
+# USER node 
 
 ENTRYPOINT ["/sbin/tini", "--"]
 

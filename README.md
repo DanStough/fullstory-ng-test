@@ -1,6 +1,7 @@
 # Fullstory Challenge
 
-To try out the application, TBD. The application itself includes more details and instructions on how it works and how it was built.
+To try out the application visit [http://fullstory-challenge.com](http://fullstory-challenge.com). 
+The application itself includes more details and instructions on how it works and how it was built.
 
 ## Run as Docker
 

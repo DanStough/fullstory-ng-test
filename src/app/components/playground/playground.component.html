@@ -1,8 +1,36 @@
 <h1 class="headline">Playground</h1>
+<p class="body-1">
+    Nothing intestinging on this page except some things to record for FullStory. 
+</p>
+<h2 class="subheading-2">Rage Click</h2>
+<p class="body-1">
+    <a href="#" onclick="return false;">A link to nowhere</a>. Rage click me. 
+</p>
 
+<h2 class="subheading-2">Form Abandon</h2>
 <p class="body-1">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat massa non erat pretium commodo. Praesent quis risus eros. Fusce dapibus malesuada velit. Fusce vestibulum, massa ultrices porttitor vehicula, nunc eros auctor justo, in fringilla lectus sapien eu metus. Etiam feugiat lorem eu ligula egestas interdum. Vestibulum turpis nibh, faucibus eu nibh ut, ultrices maximus nulla. Mauris placerat viverra vehicula. Curabitur ut risus sit amet velit lobortis elementum. In hac habitasse platea dictumst. Praesent a eros tempor lorem sodales porta. Sed pulvinar consequat justo nec porttitor. Quisque porttitor molestie consectetur. Sed dapibus non lacus quis ultrices. Donec suscipit tempor elementum.
+    Abandon me. Also FullStory shouldn't record the credit card field.
 </p>
-<p class="body-1">
-Vivamus molestie nisl in ligula bibendum mattis. Integer sit amet massa ac sapien dictum convallis vitae ac dui. Vestibulum pellentesque venenatis felis, id blandit dolor rutrum a. Suspendisse ornare ligula pharetra, pharetra tortor sodales, dictum justo. Vestibulum viverra, turpis sit amet consectetur fringilla, urna purus dapibus ligula, eu sagittis quam ipsum et lacus. Phasellus ligula dolor, sodales non nisl vel, porta vulputate arcu. Duis sit amet pretium leo. Cras odio felis, maximus vulputate nibh quis, rhoncus eleifend lacus. Praesent consequat volutpat dignissim. Nam varius commodo erat, non lobortis metus ultricies ut. Aenean malesuada ipsum non auctor pretium. Curabitur nulla arcu, posuere id suscipit sit amet, consectetur et ipsum. In nec diam ornare, cursus dolor id, sodales ligula. Etiam vitae mauris aliquet, fermentum ex ac, sollicitudin diam. Cras tristique dapibus dolor, id aliquet neque sollicitudin et.
-</p>
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Test Form</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="playgroundForm" (ngSubmit)="onSubmit()" class="form-full-width">
+            <mat-form-field class="full-width">
+                <input type="text" matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input class="fs-block" type="text" matInput placeholder="Credit Card Number (.FS-Block)" formControlName="ccnumber">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input type="email" matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+        
+            <button class="form-button" mat-raised-button color="primary" type="submit" [disabled]="true">Submit (Not)</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<h2 class="subheading-2">More Clickable</h2>
+<gmap></gmap>

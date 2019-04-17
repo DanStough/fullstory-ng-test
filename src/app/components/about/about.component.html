@@ -3,7 +3,7 @@
 <img src="assets/danielstoughavatarlarge.png"/>
 <h2 class="subheading-2">The Author</h2>
 <p class="body-1">
-Built by Dan Stough.
+Built by Dan Stough in ATL. From PGH.
 </p>
 
 <h2 class="subheading-2">The App</h2>
@@ -19,10 +19,24 @@ Built using the following excellent Free and Open Source Software (FOSS):
   <li><a href="https://angular.io/">Angular 7+</a></li>
   <li><a href="https://material.angular.io/">Angular Material</a></li>
   <li><a href="https://github.com/krallin/tini">tini</a></li>
-  <li><a href="">tini</a></li>
+  <li>Express.js + express-http-proxy</li>
 </ul>
 <h3 class="subheading-1">Progression</h3>
 <p class="body-1">
-  I wanted to build a front-end only app...
+  I wanted to build a front-end only app for this project, but the FullStory API does not allow CORS access. This would have made it possible to host 
+  on GitHub pages, which would have made delivery simple. I switched to serving the app with express.js and also using it as a proxy to make API requests 
+  to FS and GitHub. This also makes the application easier to use/more secure, as the proxy layer now stores all of the API tokens.
+</p>
+<p class="body-1">
+    I looked at a bunch of other npm packages to make development easier, but they were either not well suited for ES2015 modules, incomplete and/or overkill:
+</p>
+<ul>
+  <li>fullstory</li>
+  <li>ng-fullstory</li>
+  <li>octokit/rest.js</li>
+</ul>
+
+<p class="body-1">
+  The application is build into a publicly available docker container (<a href="https://hub.docker.com/r/dstough/fullstory-challenge">dstough/fullstory-challenge</a>).Hosted on ECR in AWS.
 </p>
 

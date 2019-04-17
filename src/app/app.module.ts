@@ -29,6 +29,7 @@ import { SupportComponent } from './components/support/support.component';
 import { FullstoryClientService } from './services/fullstory-client.service';
 import { FullstoryServerService } from './services/fullstory-server.service';
 import { GithubTableComponent } from './components/github-table/github-table.component';
+import { GmapComponent } from './components/gmap/gmap.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { GithubTableComponent } from './components/github-table/github-table.com
     PlaygroundComponent,
     SessionTableComponent,
     SupportComponent,
-    GithubTableComponent
+    GithubTableComponent,
+    GmapComponent
   ],
   imports: [
     AppRoutingModule,

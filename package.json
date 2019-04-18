@@ -9,7 +9,7 @@
     "start": "ng serve",
     "start:server": "node -r dotenv/config src/server/server.js",
     "start:server:debug": "DEBUG=* node -r dotenv/config src/server/server.js",
-    "build": "ng build && cpx -C \"dist/fullstory-ng-test/**\" \"src/server/public/\" ",
+    "build": "rimraf dist/ && ng build && cpx -C \"dist/fullstory-ng-test/**\" \"src/server/public/\" ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -50,6 +50,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "rimraf": "^2.6.3",
     "rxjs": "~6.3.3",
     "ts-node": "~7.0.0",
     "tslib": "^1.9.0",
